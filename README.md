@@ -1,12 +1,17 @@
 # Mixpanel Server Side Example
 
 Using flask, you will be able to build a simple server side implementation
+This will go to the mixpanel-flash project (760063)
 
 ## Library Dependencies
 
 Flask:
 ```bash
 pip install flask
+```
+mixpanel:
+```bash
+pip install mixpanel
 ``` 
 
 ## SME Practical Task List

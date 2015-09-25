@@ -13,7 +13,7 @@ app.debug = True
 app.secret_key = 'development'
 
 # Mixpanel tracking
-MP_TOKEN = 'jordan'
+MP_TOKEN = '867f90a1a527e30b6b0a25bb4ec2a0b6'
 mixpanel = Mixpanel(MP_TOKEN)
 
 # Fake Database
