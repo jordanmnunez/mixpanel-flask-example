@@ -182,3 +182,19 @@ footer {
 	color: #EDD2DB;
 }
 
+/********************
+FLASHES
+********************/
+
+ul.flashes {
+    list-style: none;
+    background-color: red;
+    margin: 0;
+    padding: 0;
+}
+
+li.flashes {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+ }

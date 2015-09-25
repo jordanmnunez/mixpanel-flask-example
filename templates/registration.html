@@ -17,16 +17,25 @@
 
 <body>
     <div id="box">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            <ul class=flashes>
+            {% for category, message in messages %}
+              <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+            </ul>
+            {% endif %}
+        {% endwith %}
         <header>
             <h1>Jordan's Music Finder</h1>
             <h2>Registration</h2>
         </header>
         <section>
             <form id="register" action="registration.html" method="POST" style="background-image: url('{{ url_for('static', filename='img/coachellablur.jpg') }}')">
-                <input type="text" name="fn" placeholder="First Name"></br>
-                <input type="text" name="ln" placeholder="Last Name"></br>
-                <input type="text" name="email" placeholder="Email Adress"></br>
-                <select id="genre" name="genre">
+                <input type="text" name="fn" placeholder="First Name" required></br>
+                <input type="text" name="ln" placeholder="Last Name" required></br>
+                <input type="text" name="email" placeholder="Email Adress" required></br>
+                <select id="genre" name="genre" required>
                     <option value="hiphop">Hip Hop</option>
                     <option value="indie">Indie</option>
                     <option value="trap">Trap</option>
