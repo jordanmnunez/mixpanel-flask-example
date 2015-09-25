@@ -1,0 +1,55 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>PLAYER - JMF</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600' rel='stylesheet' type='text/css'>
+
+    <script type="text/javascript">
+        (function(f,b){if(!b.__SV){var a,e,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=f.createElement("script");a.type="text/javascript";a.async=!0;a.src="//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";e=f.getElementsByTagName("script")[0];e.parentNode.insertBefore(a,e)}})(document,window.mixpanel||[]);
+            mixpanel.init("jordan", {"verbose":true});
+
+        mixpanel.register_once({"First Page First Touch":document.URL});
+        mixpanel.track("Page Loaded", {"Page Viewed": "Home - Song Page", "User Agent":navigator.userAgent});
+    </script>
+</head>
+<body>
+    <div id="box">
+        <header>
+            <h1>Chill</h1>
+            <h2>the chillest</h2>
+        </header>
+        <section>
+            <iframe width="100%" height="250" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/116683407&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+        </section>
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html" class="reg">Home</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <footer>
+        made by joji
+    </footer>
+    <script type="text/javascript">
+        mixpanel.track("Page Loaded", {"Page Viewed": "Song Page"});
+        mixpanel.identify();
+        mixpanel.people.set({
+            "$first_name":"Jordan",
+            "$last_name":"Nunez",
+            "$email":"jordan@mixpanel.com",
+            "genre":"Hip Hop",
+            "Birthday":"1950-02-02",
+            "Birthday 2":"Sep 4, 1970",
+            "$phone":"+555625331007"
+
+        })
+        mixpanel.people.increment("Song Played");
+
+    </script>
+
+</body>
+</html>

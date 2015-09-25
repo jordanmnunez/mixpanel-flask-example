@@ -1,0 +1,184 @@
+
+/********************
+GENERAL
+********************/
+
+
+
+body {
+ 	font-family: 'Open Sans', sans-serif;
+ 	text-align: center;
+}
+
+a {
+ 	text-decoration: none;
+}
+
+img {
+ 	max-width: 100%;
+}
+
+#box {
+	margin: 50px auto;
+	width: 500px;
+}
+
+
+
+/********************
+HEADING
+********************/
+
+
+
+header {
+	float: left;
+	margin: 0;
+	padding: 15px 0;
+	width: 100%;
+
+}
+
+h1 {
+	margin: 0;
+	padding: 0px;
+}
+
+h2 {
+	margin: 0;
+	padding: 0px;
+}
+
+
+/********************
+MAIN
+********************/
+
+section {
+	float: left;
+	width: 100%;
+	height: 250px;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+
+#gb {
+	margin-top: -10px;
+}
+
+
+
+/********************
+FORM
+********************/
+
+form {
+	text-align: center;
+	height: 250px;
+	margin: 0 auto;
+	padding: 20px 0;
+}
+
+form input {
+	width: 200px;
+	margin: 10px 0;
+	padding: 0px;
+}
+
+form select {
+	font-family: 'Open Sans', sans-serif;
+	width: 200px;
+	margin: 5px 0;
+}
+
+
+
+
+/********************
+NAV
+********************/
+
+nav {
+	float: left;
+	width: 100%;
+	height: 45px;
+	margin: 0;
+	padding: 0;
+}
+
+
+nav ul {
+ 	list-style: none;
+ 	margin: 0;
+ 	padding: 0 0 5px;
+}
+
+nav li {
+	display: inline-block;
+ 	margin: 0;
+ 	padding: 0;
+ }
+
+nav a.reg {
+	font-size: 1.8em;
+	padding: 1px 60px 5px;
+	margin: 0px auto;
+}
+
+
+nav a.login {
+	font-size: 1.8em;
+	padding: 1px 60px 5px;
+	margin: 0px auto;
+}
+
+nav a.reg_today {
+	font-size: 2em;
+	padding: 1px 130px;
+	margin: 0px auto;
+}
+/********************
+FOOTER
+********************/
+
+
+
+footer {
+	clear: 	both;
+	font-size: .75em;
+}
+
+
+
+/********************
+COLORS
+********************/
+
+header {
+	background: #C3DDC8;
+}
+
+h1 {
+	color: #60B16F;
+}
+
+h2 {
+	color: #FFF;
+}
+
+nav {
+	background: #FFF3F2;
+}
+
+nav a {
+	color: #E7867E;
+}
+
+nav a:hover{
+	color: #60B16F;
+}
+
+footer {
+	color: #EDD2DB;
+}
+

@@ -1,0 +1,45 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>REGISTER - JMF</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600' rel='stylesheet' type='text/css'>
+
+    <script type="text/javascript">
+        (function(f,b){if(!b.__SV){var a,e,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=f.createElement("script");a.type="text/javascript";a.async=!0;a.src="//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";e=f.getElementsByTagName("script")[0];e.parentNode.insertBefore(a,e)}})(document,window.mixpanel||[]);
+            mixpanel.init("jordan", {"verbose":true});
+
+        mixpanel.register_once({"First Page First Touch":document.URL});
+        mixpanel.track("Page Loaded", {"Page Viewed": "Registration", "User Agent":navigator.userAgent});
+    </script>
+</head>
+
+<body>
+    <div id="box">
+        <header>
+            <h1>Jordan's Music Finder</h1>
+            <h2>Registration</h2>
+        </header>
+        <section>
+            <form id="register" action="home.html" method="GET" style="background-image: url('{{ url_for('static', filename='img/coachellablur.jpg') }}')">
+                <input type="text" name="fn" placeholder="First Name"></br>
+                <input type="text" name="ln" placeholder="Last Name"></br>
+                <input type="text" name="email" placeholder="Email Adress"></br>
+                <select id="genre" name="genre">
+                    <option value="hiphop">Hip Hop</option>
+                    <option value="indie">Indie</option>
+                    <option value="trap">Trap</option>
+                    <option value="chill">Chill</option>
+                    <option value="rage">Rage</option>
+                </select></br>
+                <input type="submit" value="Submit">
+            </form>
+        </section>
+    </div>
+    <footer>
+        made by joji
+    </footer>
+
+</body>
+</html>
