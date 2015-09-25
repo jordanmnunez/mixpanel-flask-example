@@ -2,6 +2,7 @@
 from flask import Flask, redirect, render_template, request
 from urllib import unquote
 import json
+from mixpanel import Mixpanel
 
 # Initiate web-app
 app = Flask(__name__)
@@ -9,7 +10,9 @@ app = Flask(__name__)
 app.debug = True
 app.secret_key = 'development'
 
+# Mixpanel tracking
 MP_TOKEN = 'jordan'
+mixpanel = Mixpanel(MP_TOKEN)
 
 # Mixpanel cookie parser
 def cookie_to_mixpanel_data(cookie, token):
@@ -26,7 +29,18 @@ def index():
 @app.route('/registration.html', methods = ['GET', 'POST'])
 def registration():
     if request.method == "POST":
-        print cookie_to_mixpanel_data(request.cookies, MP_TOKEN)['distinct_id']
+        cookie = cookie_to_mixpanel_data(request.cookies, MP_TOKEN)
+        user_info = {
+            'alias': request.form['email'],
+            'distinct_id': cookie['distinct_id'],
+            '$first_name': request.form['fn'],
+            '$last_name': request.form['ln'],
+            '$email': request.form['email'],
+            'Favourite Genre': request.form['genre'],
+            }
+        mixpanel.alias(user_info['alias'], user_info['distinct_id'])
+        mixpanel.track(user_info['distinct_id'], 'Signup', user_info, meta={'$ip':0})
+        mixpanel.people_set(user_info['distinct_id'], user_info, meta={'$ip':0, '$ignore_time':True})
         return redirect('home.html')
     else:
         return render_template('registration.html')
