@@ -13,9 +13,12 @@ app.secret_key = 'development'
 def index():
     return render_template('index.html')
 
-@app.route('/registration.html')
+@app.route('/registration.html', methods = ['GET', 'POST'])
 def registration():
-    return render_template('registration.html')
+    if request.method == "POST":
+        return redirect('home.html')
+    else:
+        return render_template('registration.html')
 
 @app.route('/home.html')
 def home():
