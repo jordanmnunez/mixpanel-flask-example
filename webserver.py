@@ -25,6 +25,8 @@ DB = {
 def cookie_to_mixpanel_data(cookie, token):
     mp_cookie_name = "mp_%s_mixpanel" % token
     mp_cookie = cookie.get(mp_cookie_name)
+    if not mp_cookie:
+        return None
     return json.loads(unquote(mp_cookie).decode('utf8'))
 
 # Fake function that would simulate writting a user to your dabatse
@@ -54,6 +56,9 @@ def index():
 def registration():
     if request.method == "POST":
         cookie = cookie_to_mixpanel_data(request.cookies, MP_TOKEN)
+        if not cookie:
+            flash(u'there has been an internal error', 'error')
+            return redirect('registration.html')
         user_info = create_user(request.form, cookie)
         if user_info:
             mixpanel.alias(user_info['alias'], user_info['distinct_id'])
