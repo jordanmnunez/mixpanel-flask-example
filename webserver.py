@@ -50,7 +50,7 @@ def create_user(form, cookie):
 @app.route('/')
 @app.route('/index.html')
 def index():
-    return render_template('index.html')
+    return render_template('index.html', token=MP_TOKEN)
 
 @app.route('/registration.html', methods = ['GET', 'POST'])
 def registration():
@@ -69,11 +69,11 @@ def registration():
             flash(u'This email already exists', 'error')
             return redirect('registration.html')
     else:
-        return render_template('registration.html')
+        return render_template('registration.html', token=MP_TOKEN)
 
 @app.route('/home.html')
 def home():
-    return render_template('home.html')
+    return render_template('home.html', token=MP_TOKEN)
 
 
 if __name__ == '__main__':
